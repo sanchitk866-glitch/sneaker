@@ -1,0 +1,282 @@
+:root {
+    --bg-primary: #050505;
+    --bg-secondary: transparent;
+    --text-primary: rgba(255, 255, 255, 0.9);
+    --text-secondary: rgba(255, 255, 255, 0.6);
+    --accent-green: #1A4A1A;
+    --accent-gum: #C8714A;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100vw;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for a seamless App-like presentation */
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Typography classes */
+.headline {
+    font-size: 5.5rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.6) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subhead {
+    font-size: 2.25rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.body-text, .subcopy p {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.sub-headline {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.25rem;
+    color: var(--text-primary);
+}
+
+.headline-small {
+    font-size: 4.5rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+/* Nav styles - Apple-style glassmorphism */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(5, 5, 5, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+}
+
+.navbar.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: 54px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: color 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: var(--text-primary);
+}
+
+.nav-btn {
+    background: linear-gradient(135deg, var(--accent-green) 0%, #0c260c 100%);
+    padding: 0.5rem 1.25rem;
+    border-radius: 999px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.nav-btn:hover {
+    transform: scale(1.04);
+    box-shadow: 0 4px 20px rgba(26, 74, 26, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Canvas Container */
+.hero-canvas-container {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Below text */
+    pointer-events: none; /* Allows scrolling over */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-primary); 
+    background: radial-gradient(circle at center, rgba(5, 16, 5, 0.8) 0%, var(--bg-primary) 60%);
+}
+
+#hero-lightpass {
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain; /* Contain the sneaker fully and naturally blend with absolute #050505 */
+    mix-blend-mode: lighten; /* Ensures that the black from the jpg perfectly matches the CSS black without seams */
+}
+
+/* Scrollytelling Sections */
+#scroll-container {
+    position: relative;
+    z-index: 10;
+}
+
+.step {
+    width: 100%;
+    display: flex;
+    position: relative;
+    pointer-events: none; /* Text sections shouldn't block scrolling unless actionable */
+}
+
+/* Section Heights for Scrollytelling Timing */
+.step-1 { height: 200vh; }
+.step-2 { height: 250vh; }
+.step-3 { height: 250vh; }
+.step-4 { height: 200vh; }
+.step-5 { height: 150vh; }
+
+.copy-center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    opacity: 0; 
+    padding: 0 2rem;
+    will-change: transform, opacity;
+}
+
+.copy-left {
+    position: fixed;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    max-width: 450px;
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+.copy-right {
+    position: fixed;
+    top: 50%;
+    right: 8%;
+    transform: translateY(-50%);
+    max-width: 450px;
+    text-align: right;
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+/* CTA buttons */
+.cta-section {
+    pointer-events: auto; /* Re-enable clicks for buttons */
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.btn-primary {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    padding: 1rem 2.25rem;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    background: white;
+}
+
+.btn-secondary {
+    color: var(--accent-gum);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding-bottom: 2px;
+    border-bottom: 1px solid rgba(200, 113, 74, 0.3);
+    transition: border-bottom 0.2s ease, color 0.2s ease;
+}
+
+.btn-secondary:hover {
+    border-bottom: 1px solid var(--accent-gum);
+    color: #e28556;
+}
+
+/* Responsive considerations */
+@media (max-width: 768px) {
+    .copy-left, .copy-right {
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, calc(-50% + 150px)); /* Move lower on mobile */
+        text-align: center;
+        width: 90%;
+    }
+    .headline { font-size: 3.5rem; }
+    .sub-headline { font-size: 2.25rem; }
+    .headline-small { font-size: 2.75rem; }
+}

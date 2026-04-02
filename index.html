@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>गली Labs 92 | Pure Indian Streetwear</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Fixed Apple-style Navigation -->
+    <nav class="navbar hidden">
+        <div class="nav-container">
+            <div class="nav-logo">गली Labs 92</div>
+            <div class="nav-links">
+                <a href="#overview">Overview</a>
+                <a href="#construction">Construction</a>
+                <a href="#story">Story</a>
+                <a href="#specs">Specs</a>
+            </div>
+            <a href="#buy" class="nav-btn">Get गली Labs 92</a>
+        </div>
+    </nav>
+
+    <!-- Background Canvas Container -->
+    <div class="hero-canvas-container">
+        <canvas id="hero-lightpass"></canvas>
+    </div>
+
+    <!-- Scroll Content Container -->
+    <div id="scroll-container">
+        <!-- Phase 1: 0-15% (Hero Assembled) -->
+        <section class="step step-1" id="overview">
+            <div class="copy-center">
+                <h1 class="headline">गली Labs 92</h1>
+                <p class="subhead">Built for the streets. Born in India.</p>
+                <p class="body-text">Handcrafted streetwear, engineered for those who walk their own path.</p>
+            </div>
+        </section>
+
+        <!-- Phase 2: 15-40% (Soft Explosion) -->
+        <section class="step step-2" id="construction">
+            <div class="copy-left">
+                <h2 class="sub-headline">Constructed with intention.</h2>
+                <div class="subcopy">
+                    <p>Every layer chosen for feel, durability, and street-ready performance.</p>
+                    <p>From gum sole to suede collar — nothing is accidental.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phase 3: 40-65% (Materials) -->
+        <section class="step step-3" id="specs">
+            <div class="copy-right">
+                <h2 class="sub-headline">Materials that mean something.</h2>
+                <div class="subcopy">
+                    <p>Premium suede sourced for texture and longevity.</p>
+                    <p>Gum rubber outsole — grippy, warm, iconic.</p>
+                    <p>White leather paneling for contrast that commands attention.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phase 4: 65-85% (Cultural Focus) -->
+        <section class="step step-4" id="story">
+            <div class="copy-center text-large">
+                <h2 class="sub-headline">Rooted in the gully. Ready for the world.</h2>
+                <div class="subcopy">
+                    <p>92 is not just a number. It is a mindset.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phase 5: 85-100% (Reassembly & Final CTA) -->
+        <section class="step step-5" id="buy">
+            <div class="copy-center cta-section">
+                <h2 class="headline-small">Walk different. Always.</h2>
+                <p class="subcopy">गली Labs 92. For those who never followed the path — they built it.</p>
+                <div class="cta-buttons">
+                    <a href="#buy" class="btn-primary">Get Your Pair</a>
+                    <a href="#specs" class="btn-secondary">See full construction</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- GSAP for Butter-Smooth Hardware-Accelerated Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
